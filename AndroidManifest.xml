@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest android:versionCode="1487698827" android:versionName="0.1" android:installLocation="2" package="com.bobeli.superuser" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415" xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="23"/>
+  <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true" android:xlargeScreens="true"/>
+  <application android:label="Leaf" android:icon="@id/0x7F020081" android:hardwareAccelerated="true">
+    <activity android:theme="@id/0x7F0D014D" android:label="Leaf" android:name=".MainNavigationActivity" android:launchMode="2" android:screenOrientation="4" android:configChanges="1184" android:hardwareAccelerated="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </activity>
+    <activity android:theme="@id/0x7F0D014D" android:label="AppsgeyserBrowser" android:name="com.bobeli.superuser.VideoPlayerActivity" android:launchMode="2" android:screenOrientation="4" android:configChanges="1184"/>
+    <activity android:label="Ads" android:name=".ads.vast.VideoAdsLoaderActivity" android:configChanges="128"/>
+    <activity android:theme="@id/0x01030007" android:name="org.nexage.sourcekit.vast.activity.VASTActivity"/>
+    <activity android:label="App message" android:name=".MessageViewer" android:excludeFromRecents="true"/>
+    <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="4016"/>
+    <activity android:label="Loading..." android:name=".BrowserActivity"/>
+    <meta-data android:name="com.google.android.gms.version" android:value="@id/0x7F0A0007"/>
+    <service android:name="com.bobeli.superuser.push.PushGCMIntentService"/>
+    <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+        <category android:name="com.bobeli.superuser"/>
+      </intent-filter>
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+        <category android:name="com.bobeli.superuser"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name=".pull.PullServerController" android:process=":remote">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name="com.bobeli.superuser.server.CampaignReceiver" android:exported="true">
+      <intent-filter>
+        <action android:name="com.android.vending.INSTALL_REFERRER"/>
+      </intent-filter>
+    </receiver>
+    <activity android:theme="@id/0x01030010" android:name="com.inmobi.rendering.InMobiAdActivity" android:configChanges="3248" android:hardwareAccelerated="true"/>
+    <receiver android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver" android:enabled="true" android:exported="true">
+      <intent-filter>
+        <action android:name="com.inmobi.share.id"/>
+      </intent-filter>
+    </receiver>
+    <service android:name="com.inmobi.commons.internal.ActivityRecognitionManager" android:enabled="true"/>
+    <activity android:theme="@id/0x01030011" android:name="com.chartboost.sdk.CBImpressionActivity" android:excludeFromRecents="true" android:configChanges="1184" android:hardwareAccelerated="true"/>
+    <activity android:theme="@id/0x01030011" android:name="com.jirbo.adcolony.AdColonyOverlay" android:configChanges="1184"/>
+    <activity android:theme="@id/0x0103000A" android:name="com.jirbo.adcolony.AdColonyFullscreen" android:configChanges="1184"/>
+    <activity android:theme="@id/0x0103000A" android:name="com.jirbo.adcolony.AdColonyBrowser" android:configChanges="1184"/>
+    <activity android:theme="@id/0x0103000F" android:name="com.appnext.appnextinterstitial.InterstitialActivity" android:hardwareAccelerated="true"/>
+    <service android:name="com.appnext.appnextinterstitial.DownloadService"/>
+    <service android:name="com.appnext.appnextsdk.API.DownloadService"/>
+    <meta-data android:name="applovin.sdk.key" android:value="-ZSF2wakygzAiT2ruKb6qE7Of7o4QhWOGzeIuE0qv--bX0RQL2WAGdZxmL_A2VZISDaLRb9KZ8x69MWUO1effC"/>
+    <activity android:name="com.applovin.adview.AppLovinInterstitialActivity"/>
+    <activity android:name="com.applovin.adview.AppLovinConfirmationActivity"/>
+    <activity android:theme="@id/0x01030005" android:name="com.startapp.android.publish.list3d.List3DActivity" android:hardwareAccelerated="true"/>
+    <activity android:theme="@id/0x0103000F" android:name="com.startapp.android.publish.OverlayActivity" android:configChanges="1184" android:hardwareAccelerated="true"/>
+    <activity android:theme="@id/0x01030005" android:name="com.startapp.android.publish.FullScreenActivity" android:configChanges="1184" android:hardwareAccelerated="true"/>
+    <receiver android:name=".notification.NotificationCheckerBootReciever">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name=".notification.NotificationChecker"/>
+    <service android:name="com.bobeli.superuser.notification.NotificationService" android:exported="false"/>
+    <activity android:theme="@id/0x7F0D014E" android:label="Settings" android:name=".SettingsActivity"/>
+    <activity android:theme="@id/0x7F0D014F" android:label="Downloads list" android:name=".DownloadsListActivity"/>
+  </application>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <permission android:name="com.bobeli.superuser.permission.C2D_MESSAGE" android:protectionLevel="2" android:permission="ACCESS_SUPERUSER"/>
+  <uses-permission android:name="com.bobeli.superuser.permission.C2D_MESSAGE"/>
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>
